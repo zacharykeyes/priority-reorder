@@ -1,0 +1,11 @@
+{
+    "priority_search": "deck:日本語::Mining added:3",
+    "normal_search": "deck:日本語::Mining -added:3",
+    "sort_field": "FreqSort",
+    "sort_reverse": false,
+    "priority_cutoff": null,
+    "normal_prioritization": null,
+    "priority_limit": null,
+    "shift_existing": true,
+    "reorder_before_sync": true
+}
