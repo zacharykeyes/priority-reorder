@@ -1,12 +1,15 @@
 # Priority Reorder Addon
 
 A new anki addon that reorders your cards, allowing you to prioritize certain cards. The main goal for this addon is to not only have frequency reordering but also allowing you to focus more specifically on certain cards you want to learn earlier.
+
 For example: you could focus on recent cards (which you will have fresher memory of), cards with certain tags (maybe you tag based on the games/shows/book/etc you mined from), and also by using Yomitan occurrence diagrams to focus on cards from media you're currently consuming or plan to in the future (to learn words that you know for sure you will be seeing more often).
-Download from AnkiWeb: https://ankiweb.net/shared/info/857040600
 
-## How It Works
+**Install from [AnkiWeb](https://ankiweb.net/shared/info/857040600).**
 
-The addon divides your cards into two sorted queues: **Priority** and **Normal**.
+## Usage
+The addon will run automatically before sync if enabled. You can also manually trigger the reordering with Ctrl+Alt+` or Tools → Reorder Cards.
+
+The addon divides your cards into two (or more) sorted queues: **Priority** and **Normal**.
 ![Basic Priority System](diagrams/priority_diagram.svg)
 
 ## Configuration
@@ -57,7 +60,7 @@ Cards can be prioritized based on occurrence counts from Yomitan dictionaries:
 - **Normal Queue**: `deck:日本語::Mining occurrences:銀色、遥か<50` (lower frequency words)
 
 **Occurrence Search Patterns:**
-- `occurrences:銀色、遥か>=5` - Cards with occurrence count >= 50 in dictionary `銀色、遥か`
+- `occurrences:銀色、遥か>=50` - Cards with occurrence count >= 50 in dictionary `銀色、遥か`
 - `occurrences:銀色、遥か<50` - Cards with occurrence count < 50 in dictionary `銀色、遥か`
 - `occurrences:銀色、遥か=0` - Cards with no occurrences in dictionary `銀色、遥か`
 
@@ -153,6 +156,3 @@ To use occurrence search, you need to:
        └── term_meta_bank_1.json
    ```
 3. **Configure field names** to match your note type's expression and reading fields
-
-## Usage
-The addon will run automatically before sync if enabled. You can also manually trigger the reordering with Ctrl+Alt+` or Tools → Reorder Cards.

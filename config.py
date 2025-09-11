@@ -3,7 +3,7 @@ Handles loading and managing addon configuration settings.
 """
 
 from dataclasses import dataclass
-from typing import List, Union
+from typing import List
 from aqt import mw
 
 @dataclass(frozen=True)
