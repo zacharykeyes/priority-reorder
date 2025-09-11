@@ -60,7 +60,7 @@ def create_sequential_priorities_diagram():
                                facecolor='#4A90E2', edgecolor='black', linewidth=2)
     ax.add_patch(p1_rect)
     ax.text(bar_x + p1_width/2, bar_y + bar_height/2, 'PRIORITY 1\n(added:3)', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Priority 2 section (20% of bar)
     p2_x = bar_x + p1_width
@@ -69,7 +69,7 @@ def create_sequential_priorities_diagram():
                                facecolor='#2E86AB', edgecolor='black', linewidth=2)
     ax.add_patch(p2_rect)
     ax.text(p2_x + p2_width/2, bar_y + bar_height/2, 'PRIORITY 2\n(added:7)', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Normal section (50% of bar)
     normal_x = p2_x + p2_width
@@ -78,7 +78,7 @@ def create_sequential_priorities_diagram():
                                   facecolor='#7ED321', edgecolor='black', linewidth=2)
     ax.add_patch(normal_rect)
     ax.text(normal_x + normal_width/2, bar_y + bar_height/2, 'NORMAL\n(-added:7)', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Divider lines
     ax.plot([p2_x, p2_x], [bar_y, bar_y + bar_height], 'k-', linewidth=2)
@@ -110,7 +110,7 @@ def create_cutoff_prioritization_diagram():
                                     facecolor='#4A90E2', edgecolor='black', linewidth=2)
     ax.add_patch(priority_rect)
     ax.text(bar_x + priority_width/2, bar_y + bar_height/2, 'PRIORITY\n(added:4)\nFreq > 10000 →', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Normal section (60% of bar)
     normal_x = bar_x + priority_width
@@ -119,7 +119,7 @@ def create_cutoff_prioritization_diagram():
                                   facecolor='#7ED321', edgecolor='black', linewidth=2)
     ax.add_patch(normal_rect)
     ax.text(normal_x + normal_width/2, bar_y + bar_height/2, 'NORMAL\n(-added:4)\n← Freq < 1000', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Divider line
     ax.plot([normal_x, normal_x], [bar_y, bar_y + bar_height], 'k-', linewidth=2)
@@ -149,7 +149,7 @@ def create_priority_limit_diagram():
                                     facecolor='#4A90E2', edgecolor='black', linewidth=2)
     ax.add_patch(priority_rect)
     ax.text(bar_x + priority_width/2, bar_y + bar_height/2, 'PRIORITY\n(added:4)\nLimit: 50 Excess →', 
-            ha='center', va='center', fontsize=8, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Normal section (includes overflow)
     normal_x = bar_x + priority_width
@@ -158,7 +158,7 @@ def create_priority_limit_diagram():
                                   facecolor='#7ED321', edgecolor='black', linewidth=2)
     ax.add_patch(normal_rect)
     ax.text(normal_x + normal_width/2, bar_y + bar_height/2, 'NORMAL\n(-added:4 + overflow)', 
-            ha='center', va='center', fontsize=8, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Divider line
     ax.plot([normal_x, normal_x], [bar_y, bar_y + bar_height], 'k-', linewidth=2)
@@ -188,7 +188,7 @@ def create_occurrence_search_diagram():
                                     facecolor='#4A90E2', edgecolor='black', linewidth=2)
     ax.add_patch(priority_rect)
     ax.text(bar_x + priority_width/2, bar_y + bar_height/2, 'PRIORITY\n(occurrences >= 50)', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Normal section (60% of bar)
     normal_x = bar_x + priority_width
@@ -197,7 +197,7 @@ def create_occurrence_search_diagram():
                                   facecolor='#7ED321', edgecolor='black', linewidth=2)
     ax.add_patch(normal_rect)
     ax.text(normal_x + normal_width/2, bar_y + bar_height/2, 'NORMAL\n(occurrences < 50)', 
-            ha='center', va='center', fontsize=9, fontweight='bold', color='white')
+            ha='center', va='center', fontsize=12, fontweight='bold', color='white')
     
     # Divider line
     ax.plot([normal_x, normal_x], [bar_y, bar_y + bar_height], 'k-', linewidth=2)
