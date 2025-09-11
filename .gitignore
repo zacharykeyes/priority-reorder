@@ -1,0 +1,7 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# User dictionary files
+user_files/*
