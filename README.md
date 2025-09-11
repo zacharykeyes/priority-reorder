@@ -2,7 +2,7 @@
 
 A new anki addon that reorders your cards, allowing you to prioritize certain cards. The main goal for this addon is to not only have frequency reordering but also allowing you to focus more specifically on certain cards you want to learn earlier.
 
-For example: you could focus on recent cards (which you will have fresher memory of), cards with certain tags (maybe you tag based on the games/shows/book/etc you mined from), and also by using Yomitan occurrence diagrams to focus on cards from media you're currently consuming or plan to in the future (to learn words that you know for sure you will be seeing more often).
+For example: you could focus on recent cards (which you will have fresher memory of), cards with certain tags (maybe you tag based on the games/shows/book/etc you mined from), and also by using Yomitan occurrence dictionaries to focus on cards from media you're currently consuming or plan to in the future (to learn words that you know for sure you will be seeing more often).
 
 **Install from [AnkiWeb](https://ankiweb.net/shared/info/857040600).**
 

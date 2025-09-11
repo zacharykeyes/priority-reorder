@@ -5,3 +5,6 @@ __pycache__/
 
 # User dictionary files
 user_files/*
+
+# Anki addon files
+*.ankiaddon
