@@ -10,6 +10,7 @@ from aqt.operations import CollectionOp
 
 from . import config
 from . import cards
+from .log import *
 
 def run_in_background():
     """Run the reordering operation in the background"""
@@ -31,6 +32,7 @@ def setup_menu():
     mw.form.menuTools.addAction(action)
 
 # Initialize the addon
+log(CRITICAL, "***********************************************************************")
 config.reload_config()
 setup_sync_hook()
 setup_menu()

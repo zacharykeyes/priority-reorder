@@ -10,6 +10,7 @@ from anki.collection import OpChangesWithCount
 
 from .config import get_current_config
 from .occurrences import rewrite_search_string
+from .log import *
 
 def get_field_value(card, sort_field: str) -> float:
     try:
@@ -116,9 +117,11 @@ def apply_priority_limit(final_priority_cards: List[tuple], final_normal_cards: 
     return final_priority_cards, final_normal_cards
 
 def reorder_cards_with_priority_queue_manual(_) -> OpChangesWithCount:
+    log(DEBUG, "Begining reordering manually")
     return _reorder_cards_with_priority_queue_internal()
 
 def reorder_cards_with_priority_queue_sync_finish() -> OpChangesWithCount:
+    log(DEBUG, "Begining reordering on sync finish.")
     return _reorder_cards_with_priority_queue_internal()
 
 def _reorder_cards_with_priority_queue_internal() -> OpChangesWithCount:
@@ -153,8 +156,11 @@ def _reorder_cards_with_priority_queue_internal() -> OpChangesWithCount:
         original_card_order = get_cards_from_search(f"deck:{deck_name} is:new")
 
     if not final_card_order or original_card_order == final_card_order:
+        log(DEBUG, "No changes in card order.")
         return OpChangesWithCount(count=0)
-    
+
+    log(DEBUG, "Reorder complete")
+
     return mw.col.sched.reposition_new_cards(
         card_ids=final_card_order,
         starting_from=0,
