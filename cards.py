@@ -3,6 +3,7 @@ Card operations for priority reorder addon.
 Handles card searching, sorting, and reordering logic.
 """
 
+import re
 from typing import List
 from aqt import mw
 from anki.collection import OpChangesWithCount
@@ -114,7 +115,13 @@ def apply_priority_limit(final_priority_cards: List[tuple], final_normal_cards: 
         final_priority_cards = final_priority_cards[:priority_limit]
     return final_priority_cards, final_normal_cards
 
-def reorder_cards_with_priority_queue(col) -> OpChangesWithCount:
+def reorder_cards_with_priority_queue_manual(_) -> OpChangesWithCount:
+    return _reorder_cards_with_priority_queue_internal()
+
+def reorder_cards_with_priority_queue_sync_finish() -> OpChangesWithCount:
+    return _reorder_cards_with_priority_queue_internal()
+
+def _reorder_cards_with_priority_queue_internal() -> OpChangesWithCount:
     from .config import reload_config
     reload_config()
     config = get_current_config()
@@ -139,7 +146,13 @@ def reorder_cards_with_priority_queue(col) -> OpChangesWithCount:
         [card_id for card_id, _ in final_priority_cards + final_normal_cards]
     ))
     
-    if not final_card_order:
+    original_card_order = []
+    match = re.compile(r"deck:\s*([^\s]+)|deck:\s*\"([^\"]+)\"").search(config.normal_search)
+    if match:
+        deck_name = match.group(1) or match.group(2)
+        original_card_order = get_cards_from_search(f"deck:{deck_name} is:new")
+
+    if not final_card_order or original_card_order == final_card_order:
         return OpChangesWithCount(count=0)
     
     return mw.col.sched.reposition_new_cards(
